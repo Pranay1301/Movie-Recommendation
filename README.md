@@ -1,7 +1,5 @@
 # Enhanced Movie Recommendation System ✨
 
-![Movie Recommender Banner](https://via.placeholder.com/1200x300?text=Enhanced+Movie+Recommendation+System+%F0%9F%8E%AC)
-*(Placeholder banner; replace with a custom image for better visuals)*
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.0-red?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
@@ -38,38 +36,16 @@ The system filters for high-quality movies (90th percentile vote count) and weig
 ## 📊 Visual Data & Insights
 
 ### Top 10 Movies by Weighted Score (from Dataset)
-Here's a bar chart representing the top 10 movies based on IMDB-weighted scores (calculated in the notebook). Data extracted from the project's output:
+This graph displays the top 10 movies from the dataset, ranked by their calculated IMDB-style weighted score. This score balances the average rating with the number of votes, providing a more reliable measure of quality.
 
-| Movie Title                                   | Weighted Score |
-|-----------------------------------------------|----------------|
-| The Shawshank Redemption                      | 8.06           |
-| Fight Club                                    | 7.94           |
-| The Dark Knight                               | 7.92           |
-| Pulp Fiction                                  | 7.90           |
-| Inception                                     | 7.86           |
-| The Godfather                                 | 7.85           |
-| Interstellar                                  | 7.81           |
-| Forrest Gump                                  | 7.80           |
-| The Lord of the Rings: The Return of the King | 7.73           |
-| The Empire Strikes Back                       | 7.70           |
-
-#### Bar Graph (ASCII Art Representation)
-
-
-*(For a real bar graph, embed an image generated via Matplotlib in your repo: e.g., save as `top_movies_bar.png`)*
-
-![Top Movies Bar Graph](https://via.placeholder.com/800x400?text=Top+10+Movies+Bar+Graph+%28Replace+with+actual+image%29)
+![Top Movies Bar Graph](Home_Interface.png)
 
 ### Sample Similarity Distribution
-From the cosine similarity matrix (shape: 481x481), here's a histogram-like view of similarity scores for a sample movie (e.g., The Shawshank Redemption):
+From the cosine similarity matrix (shape: 481x481), here's a conceptual view of similarity scores for a sample movie:
 
-- Mean Similarity: ~0.02
-- Max Similarity (excluding self): ~0.35
-- Distribution (binned):
-
-*(Generate via code: `import matplotlib.pyplot as plt; plt.hist(similarity[0]); plt.savefig('similarity_hist.png')`)*
-
-![Similarity Histogram](https://via.placeholder.com/600x300?text=Similarity+Score+Histogram+%28Replace+with+actual+image%29)
+- **Mean Similarity**: ~0.02 (Most movies are not very similar).
+- **Max Similarity (excluding self)**: ~0.35 (The closest matches have a significant similarity score).
+- **Distribution**: The data is highly skewed, with the vast majority of movies having a similarity score between 0.0 and 0.05, and very few having a high similarity score.
 
 ---
 
@@ -88,7 +64,7 @@ From the cosine similarity matrix (shape: 481x481), here's a histogram-like view
     *(Create `requirements.txt` with: pandas, numpy, scikit-learn, nltk, streamlit, requests)*
 
 3.  **Get a TMDB API Key:**
-    -   Sign up at [TMDB](https://www.themoviedb.org/).
+
     -   Replace `YOUR_API_KEY_HERE` in `app.py`.
 
 4.  **Build the model:**
@@ -110,7 +86,7 @@ From the cosine similarity matrix (shape: 481x481), here's a histogram-like view
 3.  **Select a movie** (e.g., "Spider-Man 2") and click "Get Recommendations".
 
 ### Screenshot
-![App Screenshot](screenshot.png)
+![App Screenshot](Recommendation.png)
 *(Screenshot of the app interface showing recommendations for Spider-Man 2: Spider-Man 3 (5.97), Spider-Man (6.62), The Dark Knight (7.92), Fight Club (7.94), The Shawshank Redemption (8.06))*
 
 ---
